@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css
+   ">
+  <title>Menu Bar</title>
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=Grandstander&display=swap");
+
+    body {
+      font-family: "Grandstander", cursive;
+    }
+
+    .card-section {
+      background-color: #fff4d8;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    .container {
+      height: 100vh;
+    }
+
+    .side-nav,
+    .nav-menu {
+      height: 100%;
+      /* overflow-y: scroll; */
+    }
+
+    .side-nav .nav-menu {
+      list-style: none;
+      padding: 40px 0;
+      width: 100px;
+      background-color: #8e2619;
+    }
+
+    .side-nav .nav-item {
+      position: relative;
+      padding: 18px 20px;
+    }
+
+    .nav-item.active {
+      /* background-color: #fff;
+      box-shadow: 0px -3px rgba(0, 0, 0, 0.2), 0px 3px rgba(0, 0, 0, 0.2); */
+    }
+
+    .nav-menu {
+      border-bottom-left-radius: 32px;
+    }
+
+    .nav-item.active a {
+      color: white;
+    }
+
+    .nav-item a {
+      text-decoration: none;
+      color: #fff;
+      writing-mode: vertical-rl;
+      transform: rotate(-180deg);
+      font-family: none;
+      font-weight: 600;
+
+    }
+
+
+    .menu-text {
+      padding: 0 20px;
+    }
+
+    .side-nav .nav-item.active::before {
+      content: "";
+      position: absolute;
+      background-color: transparent;
+      bottom: 100%;
+      right: 0;
+      height: 150%;
+      width: 20px;
+      /* border-bottom-right-radius: 25px; */
+      /* box-shadow: 0 20px 0 0 #fff; */
+    }
+
+    .side-nav .nav-item.active::after {
+      content: "";
+      position: absolute;
+      background-color: transparent;
+      top: 100%;
+      right: 0;
+      height: 150%;
+      width: 20px;
+      /* border-top-right-radius: 25px; */
+      /* box-shadow: 0 -20px 0 0 #fff; */
+    }
+
+    .aside-bar {
+      padding-left: 0px !important;
+      /* height: 100vh; */
+    }
+
+    /* top header */
+    .top-header {
+      background-color: #8e2619;
+      padding: 33px;
+      /* border-top-left-radius: 50px; */
+      border-bottom-right-radius: 50px;
+      /* border-top-right-radius: 50px; */
+    }
+
+    .back-aroow {
+      font-size: 20px;
+      color: #fff;
+    }
+
+    .right-size {
+      font-size: 18px;
+      color: #fff;
+      padding-left: 1rem;
+    }
+
+    .top-header-row {
+      display: grid;
+      grid-template-columns: 50% 50%;
+    }
+
+
+    .cell-2 {
+      text-align: end;
+      gap: 4px;
+    }
+
+    /* horizo-devide */
+    .horizo-devide {
+      display: grid;
+      grid-template-columns: 15% 85%;
+      /* background-color: #8e2619; */
+    }
+
+    .content-card {
+      border-top-left-radius: 40px;
+      background-color: #fff4d8;
+    }
+
+    /* cards block */
+    .menu-img {
+      width: 105px;
+      height: 105px;
+    }
+
+    .cards-box {
+      display: grid;
+      grid-template-columns: 50% 50%;
+    }
+
+    .cards-box {
+      border: 1px solid black;
+    }
+
+    .card-img {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      left: 15px;
+      z-index: 999;
+    }
+
+    .cards {
+      margin: 1.5rem;
+      margin-left: 3.5rem;
+      display: grid;
+      grid-template-columns: 10% 90%;
+    }
+
+    .cards-single {
+      /* display: grid;
+      grid-template-columns: 40% 60%; */
+      box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+      padding: 0.9rem 0.3rem 0.9rem 3.3rem;
+      border-top-right-radius: 35px;
+      border-bottom-right-radius: 35px;
+      background-color: white;
+
+    }
+
+    .card-details {
+      /* box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px; */
+      /* float: right; */
+    }
+
+    .cards-title {
+      font-size: 16px;
+      font-weight: 600;
+      color: #8e2619;
+      font-family: none;
+    }
+
+    .cards-price {
+      font-size: 16px;
+      font-weight: 600;
+      color: #8e2619;
+      font-family: none;
+    }
+
+
+
+    /* media query */
+    @media (max-width: 320px) {
+
+      .cards {
+        margin-left: 0px !important;
+      }
+
+      .cards-single {
+        padding: 0.3rem 0rem 0.3rem 3.5rem !important;
+      }
+
+      .cards {
+        margin: 1.5rem !important;
+        /* margin-bottom: 1.5rem !important; */
+      }
+
+      .cards-desc {
+        font-size: 12px;
+      }
+
+      .menu-img {
+        width: 90px !important;
+        height: 90px !important;
+      }
+
+      .side-nav .nav-item {
+        padding: 18px 15px !important;
+
+    }
+  }
+  @media (max-width: 375px) {
+.cards{
+  margin-left: 1.5rem !important;
+}
+.cards-desc{
+  font-size: 12px ;
+}
+.menu-img {
+    width: 95px;
+    height: 95px;
+}
+  }
+  </style>
+</head>
+
+<body>
+  <!-- top header aside -->
+  <div class="card-section">
+    <!-- horizontal -->
+    <div class="top-header">
+      <div class="top-header-row">
+        <div class="cell-1">
+          <i class="fa-solid fa-arrow-left back-aroow"></i>
+        </div>
+        <div class="cell-2">
+          <i class="fa-solid fa-globe right-size"></i>
+          <i class="fa-solid fa-rotate-right right-size"></i>
+          <i class="fa-solid fa-cart-shopping right-size"></i>
+        </div>
+      </div>
+    </div>
+
+
+
+    <!-- vertical -->
+    <div class="horizo-devide">
+      <div class=" aside-bar">
+        <nav class="side-nav">
+          <ul class="nav-menu">
+            <div>
+              <li class="nav-item active"><a href="#"><span class="menu-text">Emed</span></a></li>
+
+            </div>
+            <li class="nav-item"><a href="#"><span class="menu-text">Users</span></a></li>
+            <li class="nav-item "><a href="#"><span class="menu-text">Posts</span></a></li>
+            <li class="nav-item"><a href="#"><span class="menu-text">Media</span></a></li>
+            <li class="nav-item"><a href="#"><span class="menu-text">Exit</span></a></li>
+            <li class="nav-item"><a href="#"><span class="menu-text">Crowned</span></a></li>
+            <li class="nav-item"><a href="#"><span class="menu-text">Propes</span></a></li>
+            <li class="nav-item"><a href="#"><span class="menu-text">Milkveds</span></a></li>
+            <li class="nav-item"><a href="#"><span class="menu-text">Sugar</span></a></li>
+            <li class="nav-item"><a href="#"><span class="menu-text">Crowned</span></a></li>
+            <li class="nav-item"><a href="#"><span class="menu-text">Media</span></a></li>
+            <li class="nav-item"><a href="#"><span class="menu-text">Crowned</span></a></li>
+            <li class="nav-item"><a href="#"><span class="menu-text">Propes</span></a></li>
+            
+            
+          </ul>
+        </nav>
+      </div>
+      <div class="content-card">
+        <!-- cards -->
+
+        <div class="cards">
+          <div class="card-img">
+            <img class="menu-img" src="./image/pizza3.png" alt="">
+          </div>
+          <div class="cards-single">
+
+            <div class="card-details">
+              <h4 class="cards-title">Pizza By Me</h4>
+              <p class="cards-desc">Lorem ipsum dolor sit amet dolor sit amet..</p>
+              <h4 class="cards-price">200 ₹</h4>
+            </div>
+          </div>
+        </div>
+
+        <div class="cards">
+          <div class="card-img">
+            <img class="menu-img" src="./image/pizza3.png" alt="">
+          </div>
+          <div class="cards-single">
+
+            <div class="card-details">
+              <h4 class="cards-title">Pizza By Me</h4>
+              <p class="cards-desc">Lorem ipsum dolor sit amet dolor sit amet..</p>
+              <h4 class="cards-price">200 ₹</h4>
+            </div>
+          </div>
+        </div>
+        <div class="cards">
+          <div class="card-img">
+            <img class="menu-img" src="./image/pizza3.png" alt="">
+          </div>
+          <div class="cards-single">
+
+            <div class="card-details">
+              <h4 class="cards-title">Pizza By Me</h4>
+              <p class="cards-desc">Lorem ipsum dolor sit amet dolor sit amet..</p>
+              <h4 class="cards-price">200 ₹</h4>
+            </div>
+          </div>
+        </div>
+        <div class="cards">
+          <div class="card-img">
+            <img class="menu-img" src="./image/pizza3.png" alt="">
+          </div>
+          <div class="cards-single">
+
+            <div class="card-details">
+              <h4 class="cards-title">Pizza By Me</h4>
+              <p class="cards-desc">Lorem ipsum dolor sit amet dolor sit amet..</p>
+              <h4 class="cards-price">200 ₹</h4>
+            </div>
+          </div>
+        </div>
+        <div class="cards">
+          <div class="card-img">
+            <img class="menu-img" src="./image/pizza3.png" alt="">
+          </div>
+          <div class="cards-single">
+
+            <div class="card-details">
+              <h4 class="cards-title">Pizza By Me</h4>
+              <p class="cards-desc">Lorem ipsum dolor sit amet dolor sit amet..</p>
+              <h4 class="cards-price">200 ₹</h4>
+            </div>
+          </div>
+        </div>
+        <div class="cards">
+          <div class="card-img">
+            <img class="menu-img" src="./image/pizza3.png" alt="">
+          </div>
+          <div class="cards-single">
+
+            <div class="card-details">
+              <h4 class="cards-title">Pizza By Me</h4>
+              <p class="cards-desc">Lorem ipsum dolor sit amet dolor sit amet..</p>
+              <h4 class="cards-price">200 ₹</h4>
+            </div>
+          </div>
+        </div>
+        <div class="cards">
+          <div class="card-img">
+            <img class="menu-img" src="./image/pizza3.png" alt="">
+          </div>
+          <div class="cards-single">
+
+            <div class="card-details">
+              <h4 class="cards-title">Pizza By Me</h4>
+              <p class="cards-desc">Lorem ipsum dolor sit amet dolor sit amet..</p>
+              <h4 class="cards-price">200 ₹</h4>
+            </div>
+          </div>
+        </div>
+        <div class="cards">
+          <div class="card-img">
+            <img class="menu-img" src="./image/pizza3.png" alt="">
+          </div>
+          <div class="cards-single">
+
+            <div class="card-details">
+              <h4 class="cards-title">Pizza By Me</h4>
+              <p class="cards-desc">Lorem ipsum dolor sit amet dolor sit amet..</p>
+              <h4 class="cards-price">200 ₹</h4>
+            </div>
+          </div>
+        </div>
+        <div class="cards">
+          <div class="card-img">
+            <img class="menu-img" src="./image/pizza3.png" alt="">
+          </div>
+          <div class="cards-single">
+
+            <div class="card-details">
+              <h4 class="cards-title">Pizza By Me</h4>
+              <p class="cards-desc">Lorem ipsum dolor sit amet dolor sit amet..</p>
+              <h4 class="cards-price">200 ₹</h4>
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+
+
+
+      <!-- card end here -->
+    </div>
+
+
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+  <!-- js cdn -->
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"
+    integrity="sha512-3gJwYpMe3QewGELv8k/BX9vcqhryRdzRMxVfq6ngyWXwo03GFEzjsUm8Q7RZcHPHksttq7/GFoxjCVUjkjvPdw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js
+"></script>
+  <script>
+    $(function () {
+      $("li").click(function (e) {
+        e.preventDefault();
+        $("li").removeClass("active");
+        $(this).addClass("active");
+      });
+    });
+  </script>
+
+</body>
+
+</html>
