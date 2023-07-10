@@ -9,6 +9,7 @@
     crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css
    ">
+  <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <title>Menu Bar</title>
@@ -42,13 +43,15 @@
     .side-nav .nav-menu {
       list-style: none;
       padding: 40px 0;
-      width: 100px;
+      width: 48px;
       background-color: #8e2619;
+      position: fixed;
+
     }
 
     .side-nav .nav-item {
       position: relative;
-      padding: 18px 20px;
+      padding: 15px 20px;
     }
 
     .nav-item.active {
@@ -57,7 +60,7 @@
     }
 
     .nav-menu {
-      /* border-bottom-left-radius: 32px; */
+      border-bottom-left-radius: 50px;
     }
 
     .nav-item.active a {
@@ -75,8 +78,14 @@
     }
 
     .scroll-menubar {
-      height: 800px;
+      /* height: 800px;
       overflow-y: scroll;
+      margin-top: 14px; */
+      height: 465px;
+      overflow-y: scroll;
+      margin-top: 0.9rem;
+      position: fixed;
+    left: -7px
     }
 
     .menu-text {
@@ -113,39 +122,53 @@
     /* top header */
     .top-header {
       background-color: #8e2619;
-      padding: 20px;
+      padding: 15px;
       /* border-top-left-radius: 50px; */
       border-bottom-right-radius: 50px;
       /* border-top-right-radius: 50px; */
+      /* position: fixed;
+      width: 100%;
+      z-index: 9999999; */
+    }
+
+    .menu-img {
+      position: relative;
+      top: -7px;
+    }
+
+    .top-header2 {
+      position: fixed;
+      width: 100%;
+      z-index: 9999999;
     }
 
     .back-aroow {
       font-size: 20px;
-    /* color: #fff; */
-    color: #8e2619;
-    border: 1px solid white;
-    border-radius: 6px;
-    width: 25px;
-    
-    height: 25px;
-    padding: 3px 7px;
-    background-color: white;
-    cursor: pointer;
+      /* color: #fff; */
+      color: white;
+
+      border-radius: 6px;
+      width: 25px;
+
+      height: 25px;
+      padding: 3px 7px;
+
+      cursor: pointer;
     }
 
-    
+
 
     .right-size {
-      font-size: 18px;
-      color: #8e2619;
+      font-size: 19px !important;
+      color: white;
       padding-left: 1rem;
       width: 25px;
-    height: 25px;
-    border-radius: 7px;
-    border: 1px solid white;
-    padding: 5px 3px;
-    background-color: white;
-    color: blackssh-keygen
+      height: 25px;
+      border-radius: 7px;
+
+      padding: 5px 3px;
+
+      color: blackssh-keygen
     }
 
     .top-header-row {
@@ -171,6 +194,7 @@
       background-color: #fff4d8;
       border-bottom-left-radius: 35px;
       margin-bottom: 3.8rem;
+      margin-top: 3.8rem;
     }
 
     /* cards block */
@@ -227,6 +251,7 @@
       font-weight: 600;
       color: #8e2619;
       font-family: none;
+      margin-bottom: 2px !important;
     }
 
     .cards-price {
@@ -239,7 +264,9 @@
       font-family: 'Roboto', sans-serif;
     }
 
-
+    .modal-content {
+        left: 60px !important;
+      }
 
     /* media query */
     @media (max-width: 320px) {
@@ -247,11 +274,16 @@
       .cards {
         margin-left: 0px !important;
       }
-
+      .modal-content {
+    left: 25px !important;
+}
       .cards-single {
-        padding: 0.3rem 0rem 0.3rem 3.5rem !important;
+        padding: 0.7rem 0rem 0.7rem 3.5rem !important;
       }
-
+.cart{
+  position: relative;
+    top: 3px;
+}
       .cards {
         margin: 1.5rem !important;
         /* margin-bottom: 1.5rem !important; */
@@ -263,13 +295,18 @@
       }
 
       .menu-img {
-        max-width: 90px !important;
-        max-height: 90px !important;
+        max-width: 85px !important;
+        max-height: 85px !important;
         border-radius: 50%;
+        position: relative;
+    top: 1px !important;
+      }
+      .category-heading{
+        padding-left: 2.5rem !important;
       }
 
       .side-nav .nav-item {
-        padding: 18px 15px !important;
+        padding: 15px 15px !important;
 
       }
 
@@ -291,6 +328,20 @@
         text-align: end !important;
         right: 18px;
       }
+
+      .top-header-row {
+        grid-template-columns: 40% 60% !important;
+      }
+
+      .text {
+        font-size: 11px !important;
+      }
+      .scroll-menubar{
+        left: -1px !important;
+      }
+      /* .modal-content {
+    left: 23px !important;
+} */
     }
 
     /* desk top media query */
@@ -307,9 +358,20 @@
         position: relative;
         left: -9rem !important;
       }
+
+      .menu-img {
+
+        top: -4px !important;
+      }
+      
+ 
     }
 
-
+/* @media (max-width:768px){
+  .modal-content{
+        left: 65px !important;
+      }
+} */
 
     @media (min-width:570px) and (max-width: 768px) {
 
@@ -322,7 +384,7 @@
       .card-img {
         left: 3px !important;
       }
-
+     
     }
 
 
@@ -332,14 +394,56 @@
         position: relative;
         left: -6rem !important;
       }
-
+      .modal-dialog.modal-dialog-centered::after {
+    content: '';
+    border-width: 11px;
+    border-style: solid;
+    border-color: #8c2e22 transparent transparent transparent;
+   display: none;
+}
+.category-heading {
+  left: 5rem !important;
+}
+.scroll-menubar {
+  height: 544px !important;
+}
     }
+
+
+
+    @media only screen and (min-width:768px) and (max-width: 1024px) {
+      .scroll-menubar{
+        height: 1000px!important;
+      }
+      .category-heading{
+      left: 24px !important;
+      }
+      .bottom-header{
+        border-bottom-left-radius: 40px !important;
+      }
+      .menu-img{
+        top: -7px !important;
+      }
+      .cart{
+        position: relative;
+        top: 6px !important;
+      }
+      .addtocart{
+        position: relative;
+    left: 30px;
+      }
+      .modal-dialog.modal-dialog-centered::after{
+        display: none;
+      }
+    }
+}
+
 
     @media (min-width:1140px) and (max-width: 2560px) {
 
       .content-card {
         position: relative;
-        left: -10rem !important;
+        left: -9rem !important;
       }
 
       .card-img {
@@ -367,6 +471,16 @@
         max-height: 95px;
         border-radius: 50%;
       }
+      .modal-content {
+    left: 45px !important;
+}
+      .menu-img {
+
+        top: -6.5px !important;
+      }
+      .category-heading{
+        padding-left: 3rem !important;
+      }
     }
 
     .scroll-menubar::-webkit-scrollbar {
@@ -386,6 +500,15 @@
     i.fa-solid.fa-plus {
       font-size: 11px;
     }
+    .modal-dialog.modal-dialog-centered::after {
+    content: '';
+    border-width: 11px;
+    border-style: solid;
+    border-color: #8c2e22 transparent transparent transparent;
+    position: absolute;
+    top: 77%;
+    left: 88%;
+}
 
     .cart {
       display: grid;
@@ -404,6 +527,7 @@
     .cards-desc {
       margin-bottom: 3px !important;
       color: black;
+      font-family: 'Roboto', sans-serif;
     }
 
     /* add cart btn whole code */
@@ -430,14 +554,16 @@
       color: #fff;
       background: #8e2619;
       position: absolute;
-      top: 0;
-      left: 0;
+      /* top: 0;
+      left: 0; */
+      top: 1px;
+      left: 5px;
       height: 100%;
       width: 100%;
       display: flex;
       justify-content: center;
       align-items: center;
-      font-size: 12px;
+      font-size: 13px;
       font-weight: 700;
       font-family: 'Quicksand', sans-serif;
     }
@@ -450,7 +576,7 @@
       background: #8e2619;
       position: absolute;
       width: 100%;
-      top: 0;
+      top: -1px;
       left: 0;
       transition: transform 0.3s ease;
 
@@ -525,8 +651,8 @@
       margin: 0px;
       width: 50px;
       height: 100%;
-      line-height: 40px;
-      font-size: 11pt;
+      line-height: 42px;
+      font-size: 13pt;
       box-sizing: border-box;
       background: #8e2619;
       font-family: calibri;
@@ -539,17 +665,23 @@
     i.fa-solid.fa-minus.custom-adds-in-de,
     i.fa-solid.fa-plus.add-icon.custom-adds-in-de {
       font-size: 10px !important;
-    position: relative;
-    top: 3.5px;
-    border: 2px solid white;
-    border-radius: 50px;
-    background-color: white;
-    width: 15px;
-    height: 15px;
-    color: black;
-    left: -1.5px;
+      position: relative;
+      top: 3.7px;
+      border: 2px solid white;
+      border-radius: 50px;
+      background-color: white;
+      width: 15px;
+      height: 15px;
+      color: black;
+      left: -2.5px;
+      padding: 0.4px 1.5px;
     }
 
+    li.nav-item>a:active {
+      border-left: 1px solid;
+
+
+    }
 
 
     /* add cart btn end  */
@@ -558,7 +690,8 @@
     .read-box {
       display: flex;
       flex-direction: column;
-      gap: 2px;
+      /* gap: 2px; */
+      line-height: 13px;
     }
 
     .text {
@@ -598,27 +731,33 @@
 
     .text {
       font-size: 12px !important;
+      line-height: 14px;
     }
 
 
     /* bottom header*/
     .bottom-header {
       padding-bottom: 9px !important;
+      /* padding: 10px !important; */
       padding: 10px !important;
+      /* position: fixed; */
+
+      /* width: 100%; */
       position: fixed;
-      width: 100%;
-      bottom: -1px;
-      z-index: 99999;
+    bottom: 0px;
+    width: 100%;
+      z-index: 999999;
       /* border-bottom-right-radius: 50px;
     border-top-right-radius: 50px; */
       border-top-right-radius: 50px !important;
       border-bottom-right-radius: 0px !important;
+      border-bottom-left-radius: 50px;
     }
 
     .footer-cell2 {
       text-align: center;
       position: relative;
-      top: 17px;
+      top: 12px;
     }
 
     .footer-proceed {
@@ -669,7 +808,7 @@
 
     .stick-aside {
       position: fixed;
-      bottom: 48px;
+      bottom: 55px;
       font-weight: 700;
       right: 5px;
       z-index: 999999;
@@ -677,11 +816,156 @@
     }
 
     .hover-dsp {
-      color: black;
+      color: #8e2619;
       font-size: 13px;
       text-align: center;
       font-family: sans-serif;
     }
+
+
+    /* top header 3 d button css */
+    .back-img {
+      width: 40px;
+    }
+
+
+    /* 16 */
+    .btn-16 {
+      border: none;
+      color: #000;
+    }
+
+    .btn-16:after {
+      position: absolute;
+      content: "";
+      width: 0;
+      height: 100%;
+      top: 0;
+      left: 0;
+      direction: rtl;
+      z-index: -1;
+      box-shadow:
+        -7px -7px 20px 0px #fff9,
+        -4px -4px 5px 0px #fff9,
+        7px 7px 20px 0px #0002,
+        4px 4px 5px 0px #0001;
+      transition: all 0.3s ease;
+    }
+
+    .btn-16:hover {
+      color: #000;
+    }
+
+    .btn-16:hover:after {
+      left: auto;
+      right: 0;
+      width: 100%;
+    }
+
+    .btn-16:active {
+      top: 2px;
+    }
+
+    .custom-btn2 {
+      width: 100px !important;
+    }
+
+    .custom-btn {
+      width: 30px;
+      height: 30px;
+      color: #fff;
+      border-radius: 30px;
+      padding: 10px 25px;
+      font-family: 'Lato', sans-serif;
+      font-weight: 500;
+      background: transparent;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      position: relative;
+      display: inline-block;
+      box-shadow: inset 2px 2px 2px 0px rgba(255, 255, 255, .5),
+        7px 7px 20px 0px rgba(0, 0, 0, .1),
+        4px 4px 5px 0px rgba(0, 0, 0, .1);
+      outline: none;
+    }
+
+    .category-heading {
+      /* padding-left: 2.5rem;
+      font-size: 21px;
+      padding-top: 0.5rem;
+      position: relative;
+    top: 5px; */
+    padding-left: 5rem;
+    font-size: 21px;
+    padding-top: 0.5rem;
+    position: relative;
+    top: 8px;
+    }
+
+    /* popup */
+    table {
+        width: 300px;
+
+        font-size: 18px;
+        border-collapse: collapse;
+    }
+tbody{
+  color: white;
+}
+    td,
+    th {
+        padding: 7px 20px;
+
+        text-align: left;
+    }
+
+    thead tr {
+        background-color: #087f5b;
+        color: #fff;
+    }
+
+    thead th {
+        width: 25%;
+    }
+
+    tr {
+        /* border-bottom: 0.5px solid #e3caca; */
+    }
+td{
+  font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+}
+.modal-header{
+  padding: 8px 12px !important;
+  border-bottom: none;
+  display: none;
+}
+.btn-close{
+  
+  font-size: 12px;
+    padding-right: 22px;
+
+}
+    .modal-content {
+        /* height: 300px;
+        overflow: scroll; */
+        height: 230px;
+    overflow: scroll;
+    width: 300px;
+    margin: auto;
+    background-color: #8e2619e8;
+    border-top-right-radius: 50px;
+    border-bottom-left-radius: 50px;
+    transform: rotateY(35deg);
+    position: relative;
+    top: 42px;
+    left: 23px;
+
+    }
+    .modal-content::-webkit-scrollbar {
+      display: none;
+    }
+
   </style>
 </head>
 
@@ -689,16 +973,22 @@
   <!-- top header aside -->
   <div class="card-section">
     <!-- horizontal -->
-    <div class="top-header">
+    <div class="top-header top-header2">
       <div class="top-header-row">
         <div class="cell-1">
-        <i class="fa-solid fa-caret-left back-aroow"></i>
+
+          <i class="fa-solid fa-chevron-left back-aroow"></i>
+          <!-- <img src="./image/2.png" alt="" class="back-img"> -->
 
         </div>
         <div class="cell-2">
+
           <i class="fa-solid fa-globe right-size"></i>
           <i class="fa-solid fa-rotate-right right-size"></i>
           <i class="fa-solid fa-cart-shopping right-size"></i>
+
+
+
         </div>
       </div>
     </div>
@@ -711,10 +1001,13 @@
         <nav class="side-nav">
           <ul class="nav-menu">
             <div class="scroll-menubar">
-              <li class="nav-item active"><a href="#"><span class="menu-text">Emed</span></a></li>
 
 
-              <li class="nav-item"><a href="#"><span class="menu-text">Users</span></a></li>
+              <li class="nav-item active  "><a href="#" class="clickable"><span class="menu-text   ">Emed</span></a>
+              </li>
+
+
+              <li class="nav-item"><a href="#" class="clickable"><span class="menu-text">Users</span></a></li>
               <li class="nav-item "><a href="#"><span class="menu-text">Posts</span></a></li>
               <li class="nav-item"><a href="#"><span class="menu-text">Media</span></a></li>
               <li class="nav-item"><a href="#"><span class="menu-text">Exit</span></a></li>
@@ -726,14 +1019,31 @@
               <li class="nav-item"><a href="#"><span class="menu-text">Media</span></a></li>
               <li class="nav-item"><a href="#"><span class="menu-text">Crowned</span></a></li>
               <li class="nav-item"><a href="#"><span class="menu-text">Propes</span></a></li>
+              <li class="nav-item"><a href="#"><span class="menu-text">Sugar</span></a></li>
+              <li class="nav-item"><a href="#"><span class="menu-text">Crowned</span></a></li>
+              <li class="nav-item"><a href="#"><span class="menu-text">Media</span></a></li>
+              <li class="nav-item"><a href="#"><span class="menu-text">Crowned</span></a></li>
 
+              <li class="nav-item"><a href="#"><span class="menu-text">Propes</span></a></li>
+              <li class="nav-item"><a href="#"><span class="menu-text">Users</span></a></li>
+              <li class="nav-item "><a href="#"><span class="menu-text">Posts</span></a></li>
+              <li class="nav-item"><a href="#"><span class="menu-text">Media</span></a></li>
+              <li class="nav-item"><a href="#"><span class="menu-text">Exit</span></a></li>
+              <li class="nav-item"><a href="#"><span class="menu-text">Crowned</span></a></li>
+              <li class="nav-item"><a href="#"><span class="menu-text">Propes</span></a></li>
+              <li class="nav-item"><a href="#"><span class="menu-text">Milkveds</span></a></li>
+              <li class="nav-item"><a href="#"><span class="menu-text">Sugar</span></a></li>
+              <li class="nav-item"><a href="#"><span class="menu-text">Crowned</span></a></li>
+              <li class="nav-item"><a href="#"><span class="menu-text">Media</span></a></li>
             </div>
           </ul>
         </nav>
       </div>
-      <div class="content-card">
+      <div class="content-card" id="sec1">
         <!-- cards -->
-
+        <div class="head-title">
+          <h4 class="cards-title category-heading">Vegan Soup</h4>
+        </div>
         <div class="cards">
           <div class="card-img">
             <img class="menu-img" src="./image/pizza3.png" alt="">
@@ -746,9 +1056,7 @@
               <!-- <p class="read-more">Read More</p>  -->
               <div class="read-box">
                 <p class="text cards-desc">
-                  Lorem, ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus
-                  veniam sit facilis cum soluta amet ullam vel nisi ipsa eum, zdfdsfsd
-                </p>
+                  Lorem, ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus</p>
                 <input type="checkbox" class="text-btn" />
               </div>
 
@@ -800,7 +1108,7 @@
               <div class="read-box">
                 <p class="text cards-desc">
                   Lorem, ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus
-                  veniam sit facilis cum soluta amet ullam vel nisi ipsa eum, zdfdsfsd
+
                 </p>
                 <input type="checkbox" class="text-btn" />
               </div>
@@ -853,7 +1161,7 @@
               <div class="read-box">
                 <p class="text cards-desc">
                   Lorem, ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus
-                  veniam sit facilis cum soluta amet ullam vel nisi ipsa eum, zdfdsfsd
+
                 </p>
                 <input type="checkbox" class="text-btn" />
               </div>
@@ -904,7 +1212,7 @@
               <div class="read-box">
                 <p class="text cards-desc">
                   Lorem, ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus
-                  veniam sit facilis cum soluta amet ullam vel nisi ipsa eum, zdfdsfsd
+
                 </p>
                 <input type="checkbox" class="text-btn" />
               </div>
@@ -954,108 +1262,7 @@
               <div class="read-box">
                 <p class="text cards-desc">
                   Lorem, ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus
-                  veniam sit facilis cum soluta amet ullam vel nisi ipsa eum, zdfdsfsd
-                </p>
-                <input type="checkbox" class="text-btn" />
-              </div>
-              <div class="cart">
-                <h4 class="cards-price">200 ₹</h4>
 
-                <!-- <button class="custom-add-to-cart">Add <i class="fa-solid fa-plus"></i></button> -->
-                <div>
-                  <button class="addtocart">
-                    <div class="pretext">
-                      Add <i class="fa-solid fa-plus add-icon  add-icon-ony-add"></i>
-                    </div>
-
-                    <div class="pretext done">
-                      <div class="posttext">
-                        <!-- add to cart  -->
-                        <div>
-                          <div class="quantity-field">
-                            <p class="value-button decrease-button" onclick="decreaseValue(this)" title="Azalt"><i
-                                class="fa-solid fa-minus custom-adds-in-de"></i></p>
-                            </p>
-                            <div class="number">0</div>
-                            <p class="value-button increase-button" onclick="increaseValue(this, 20)" title="Arrtır"><i
-                                class="fa-solid fa-plus add-icon custom-adds-in-de"></i>
-                            </p>
-                          </div>
-                        </div>
-
-                        <!-- add to cart end  -->
-                      </div>
-                    </div>
-
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="cards">
-          <div class="card-img">
-            <img class="menu-img" src="./image/pizza3.png" alt="">
-          </div>
-          <div class="cards-single">
-
-            <div class="card-details">
-              <h4 class="cards-title">Pizza By Me</h4>
-              <!-- <p class="cards-desc">Lorem ipsum dolor sit amet dolor sit amet..</p> -->
-              <div class="read-box">
-                <p class="text cards-desc">
-                  Lorem, ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus
-                  veniam sit facilis cum soluta amet ullam vel nisi ipsa eum, zdfdsfsd
-                </p>
-                <input type="checkbox" class="text-btn" />
-              </div>
-              <div class="cart">
-                <h4 class="cards-price">200 ₹</h4>
-                <!-- <button class="custom-add-to-cart">Add <i class="fa-solid fa-plus"></i></button> -->
-                <div>
-                  <button class="addtocart">
-                    <div class="pretext">
-                      Add <i class="fa-solid fa-plus add-icon  add-icon-ony-add"></i>
-                    </div>
-
-                    <div class="pretext done">
-                      <div class="posttext">
-                        <!-- add to cart  -->
-                        <div>
-                          <div class="quantity-field">
-                            <p class="value-button decrease-button" onclick="decreaseValue(this)" title="Azalt"><i
-                                class="fa-solid fa-minus custom-adds-in-de"></i></p>
-                            </p>
-                            <div class="number">0</div>
-                            <p class="value-button increase-button" onclick="increaseValue(this, 20)" title="Arrtır"><i
-                                class="fa-solid fa-plus add-icon custom-adds-in-de"></i>
-                            </p>
-                          </div>
-                        </div>
-
-                        <!-- add to cart end  -->
-                      </div>
-                    </div>
-
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="cards">
-          <div class="card-img">
-            <img class="menu-img" src="./image/pizza3.png" alt="">
-          </div>
-          <div class="cards-single">
-
-            <div class="card-details">
-              <h4 class="cards-title">Pizza By Me</h4>
-              <!-- <p class="cards-desc">Lorem ipsum dolor sit amet dolor sit amet..</p> -->
-              <div class="read-box">
-                <p class="text cards-desc">
-                  Lorem, ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus
-                  veniam sit facilis cum soluta amet ullam vel nisi ipsa eum, zdfdsfsd
                 </p>
                 <input type="checkbox" class="text-btn" />
               </div>
@@ -1106,7 +1313,7 @@
               <div class="read-box">
                 <p class="text cards-desc">
                   Lorem, ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus
-                  veniam sit facilis cum soluta amet ullam vel nisi ipsa eum, zdfdsfsd
+
                 </p>
                 <input type="checkbox" class="text-btn" />
               </div>
@@ -1156,7 +1363,108 @@
               <div class="read-box">
                 <p class="text cards-desc">
                   Lorem, ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus
-                  veniam sit facilis cum soluta amet ullam vel nisi ipsa eum, zdfdsfsd
+
+                </p>
+                <input type="checkbox" class="text-btn" />
+              </div>
+              <div class="cart">
+                <h4 class="cards-price">200 ₹</h4>
+
+                <!-- <button class="custom-add-to-cart">Add <i class="fa-solid fa-plus"></i></button> -->
+                <div>
+                  <button class="addtocart">
+                    <div class="pretext">
+                      Add <i class="fa-solid fa-plus add-icon  add-icon-ony-add"></i>
+                    </div>
+
+                    <div class="pretext done">
+                      <div class="posttext">
+                        <!-- add to cart  -->
+                        <div>
+                          <div class="quantity-field">
+                            <p class="value-button decrease-button" onclick="decreaseValue(this)" title="Azalt"><i
+                                class="fa-solid fa-minus custom-adds-in-de"></i></p>
+                            </p>
+                            <div class="number">0</div>
+                            <p class="value-button increase-button" onclick="increaseValue(this, 20)" title="Arrtır"><i
+                                class="fa-solid fa-plus add-icon custom-adds-in-de"></i>
+                            </p>
+                          </div>
+                        </div>
+
+                        <!-- add to cart end  -->
+                      </div>
+                    </div>
+
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="cards">
+          <div class="card-img">
+            <img class="menu-img" src="./image/pizza3.png" alt="">
+          </div>
+          <div class="cards-single">
+
+            <div class="card-details">
+              <h4 class="cards-title">Pizza By Me</h4>
+              <!-- <p class="cards-desc">Lorem ipsum dolor sit amet dolor sit amet..</p> -->
+              <div class="read-box">
+                <p class="text cards-desc">
+                  Lorem, ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus
+
+                </p>
+                <input type="checkbox" class="text-btn" />
+              </div>
+              <div class="cart">
+                <h4 class="cards-price">200 ₹</h4>
+                <!-- <button class="custom-add-to-cart">Add <i class="fa-solid fa-plus"></i></button> -->
+                <div>
+                  <button class="addtocart">
+                    <div class="pretext">
+                      Add <i class="fa-solid fa-plus add-icon  add-icon-ony-add"></i>
+                    </div>
+
+                    <div class="pretext done">
+                      <div class="posttext">
+                        <!-- add to cart  -->
+                        <div>
+                          <div class="quantity-field">
+                            <p class="value-button decrease-button" onclick="decreaseValue(this)" title="Azalt"><i
+                                class="fa-solid fa-minus custom-adds-in-de"></i></p>
+                            </p>
+                            <div class="number">0</div>
+                            <p class="value-button increase-button" onclick="increaseValue(this, 20)" title="Arrtır"><i
+                                class="fa-solid fa-plus add-icon custom-adds-in-de"></i>
+                            </p>
+                          </div>
+                        </div>
+
+                        <!-- add to cart end  -->
+                      </div>
+                    </div>
+
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="cards">
+          <div class="card-img">
+            <img class="menu-img" src="./image/pizza3.png" alt="">
+          </div>
+          <div class="cards-single">
+
+            <div class="card-details">
+              <h4 class="cards-title">Pizza By Me</h4>
+              <!-- <p class="cards-desc">Lorem ipsum dolor sit amet dolor sit amet..</p> -->
+              <div class="read-box">
+                <p class="text cards-desc">
+                  Lorem, ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus
+
                 </p>
                 <input type="checkbox" class="text-btn" />
               </div>
@@ -1197,12 +1505,103 @@
         <!-- stick menu bar -->
         <div class="stick-aside">
           <div class="rounde-menu">
-            <img src="./image/menu3.avif" class="menu-icon-img" alt="">
-            <p class="hover-dsp">MENU </p>
+            <img src="./image/menu3.avif" class="menu-icon-img"data-bs-toggle="modal" href="#exampleModalToggle" role="button" alt="">
+            <p class="hover-dsp" data-bs-toggle="modal" href="#exampleModalToggle" role="button">MENU </p>
           </div>
         </div>
 
       </div>
+      <!-- modal code -->
+      <div class="modal fade" id="exampleModalToggle" aria-hidden="true" aria-labelledby="exampleModalToggleLabel"
+      tabindex="-1">
+      <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+              <div class="modal-header">
+
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+
+              <table>
+                  <thead>
+
+                  </thead>
+                  <tbody>
+                      <tr>
+                          <td>Deepinder Goyal Pankaj </td>
+                          <td><i class="fa-solid fa-angle-right"></i></td>
+                      </tr>
+                      <tr>
+                          <td>Deepinder Goyal Pankaj </td>
+                          <td><i class="fa-solid fa-angle-right"></i></td>
+                      </tr>
+                      <tr>
+                          <td>Deepinder Goyal Pankaj </td>
+                          <td><i class="fa-solid fa-angle-right"></i></td>
+                      </tr>
+                      <tr>
+                          <td>Deepinder Goyal Pankaj </td>
+                          <td><i class="fa-solid fa-angle-right"></i></td>
+                      </tr>
+                      <tr>
+                          <td>Deepinder Goyal Pankaj </td>
+                          <td><i class="fa-solid fa-angle-right"></i></td>
+                      </tr>
+                      <tr>
+                          <td>Deepinder Goyal Pankaj </td>
+                          <td><i class="fa-solid fa-angle-right"></i></td>
+                      </tr>
+                      <tr>
+                          <td>Deepinder Goyal Pankaj </td>
+                          <td><i class="fa-solid fa-angle-right"></i></td>
+                      </tr>
+                      <tr>
+                          <td>Deepinder Goyal Pankaj </td>
+                          <td><i class="fa-solid fa-angle-right"></i></td>
+                      </tr>
+                      <tr>
+                          <td>Deepinder Goyal Pankaj</td>
+                          <td><i class="fa-solid fa-angle-right"></i></td>
+                      </tr>
+                      <tr>
+                          <td>Deepinder Goyal Pankaj</td>
+                          <td><i class="fa-solid fa-angle-right"></i></td>
+                      </tr>
+                      <tr>
+                          <td>Deepinder Goyal Pankaj</td>
+                          <td><i class="fa-solid fa-angle-right"></i></td>
+                      </tr>
+                      <tr>
+                          <td>Deepinder Goyal Pankaj</td>
+                          <td><i class="fa-solid fa-angle-right"></i></td>
+                      </tr>
+
+                  </tbody>
+              </table>
+
+          </div>
+      </div>
+  </div>
+  <div class="modal fade" id="exampleModalToggle2" aria-hidden="true" aria-labelledby="exampleModalToggleLabel2"
+      tabindex="-1">
+      <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+              <div class="modal-header">
+                  <h1 class="modal-title fs-5" id="exampleModalToggleLabel2">Modal 2</h1>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                  Hide this modal and show the first with the button below.
+              </div>
+              <div class="modal-footer">
+                  <button class="btn btn-primary" data-bs-target="#exampleModalToggle" data-bs-toggle="modal">Back to
+                      first</button>
+              </div>
+          </div>
+      </div>
+  </div>
+<!-- whole cart regian -->
+
+
 
 
 
@@ -1224,6 +1623,11 @@
         <div class="cell-2 footer-cell2">
           <button class="custom-add-to-cart footer-proceed">Proceed <i
               class="fa-solid fa-arrow-right-long footer-right-arow "></i> </button>
+
+
+
+
+
         </div>
       </div>
     </div>
@@ -1297,6 +1701,8 @@
         });
     });
 </script> -->
+  
+
 
 </body>
 
