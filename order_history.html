@@ -381,7 +381,12 @@
         position: relative;
         /* left: -6rem !important; */
       }
-
+      a.js-expander-button.expander_button:focus{
+     color: black ;
+    }
+    a.js-expander-button.expander_button:hover{
+     color: black !important;
+    }
     }
 
     @media (min-width:1140px) and (max-width: 2560px) {
@@ -856,6 +861,8 @@
     }
 tbody{
   color: white;
+  /* border-left: 0.5px solid #e3caca;
+  border-right: 0.5px solid #e3caca; */
 }
     td,
     th {
@@ -973,7 +980,7 @@ td{
 color: black;
 }
 tr{
-  border-bottom: 0.5px solid #e3caca;
+  border-bottom: 0.5px solid #8e2619;
 }
 .tbale-box{
   /* border: 1px solid black; */
@@ -982,7 +989,18 @@ tr{
 .js-expander-more.expander_more::-webkit-scrollbar {
     display: none;
 }
-
+a.pending_order{
+  text-decoration: revert;
+}
+.heading-row{
+  border: none;
+}
+.tbale-box {
+    border: 0.5px solid #8e2619;
+    border-radius: 4px;
+    border-top-left-radius: 13px;
+    border-top-right-radius: 13px;
+}
   </style>
 </head>
 
@@ -1020,7 +1038,7 @@ tr{
           <h3 class="order-title">Order ID:55</h3>
 
           <div class="click_table">
-            <p class="order_table"><a href="#"  class="js-expander-button expander_button" aria-pressed="false">Pending Order</a>  <span><a href="#"  class="js-expander-button expander_button" >Confirmed Order</a></span></p>
+            <p class="order_table"><a href="#"  class="js-expander-button expander_button pending_order" id="pending" aria-pressed="false">Pending Order</a>  <span><a href="#"  class="js-expander-button expander_button conform_order" id="conform" >Confirmed Order</a></span></p>
           </div>
 
 
@@ -1033,7 +1051,7 @@ tr{
  <div class="tbale-box">
   <table>
     <thead >
-      <tr>
+      <tr class="heading-row">
         <th style="border-top-left-radius:11px" >Your Order</th>
         <th>QTY</th>
         <th style="border-top-right-radius:11px">Price</th>
@@ -1047,7 +1065,13 @@ tr{
         <td>450.00</td>
       
       </tr>
-       <tr>
+      <tr >
+        <td>Item</td>
+        <td>1</td>
+        <td>450.00</td>
+      
+      </tr>
+       <tr class="heading-row">
         <!-- <td>Item</td> -->
         <td colspan="2">Total Amount</td>
         <td>450.00</td>
@@ -1088,76 +1112,7 @@ tr{
         </div> -->
 
       </div>
-      <!-- modal code -->
-      <!-- <div class="modal fade" id="exampleModalToggle" aria-hidden="true" aria-labelledby="exampleModalToggleLabel"
-      tabindex="-1">
-      <div class="modal-dialog modal-dialog-centered">
-          <div class="modal-content">
-              <div class="modal-header">
-
-                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-              </div>
-
-              <table>
-                  <thead>
-
-                  </thead>
-                  <tbody>
-                      <tr>
-                          <td>Deepinder Goyal Pankaj </td>
-                          <td><i class="fa-solid fa-angle-right"></i></td>
-                      </tr>
-                      <tr>
-                          <td>Deepinder Goyal Pankaj </td>
-                          <td><i class="fa-solid fa-angle-right"></i></td>
-                      </tr>
-                      <tr>
-                          <td>Deepinder Goyal Pankaj </td>
-                          <td><i class="fa-solid fa-angle-right"></i></td>
-                      </tr>
-                      <tr>
-                          <td>Deepinder Goyal Pankaj </td>
-                          <td><i class="fa-solid fa-angle-right"></i></td>
-                      </tr>
-                      <tr>
-                          <td>Deepinder Goyal Pankaj </td>
-                          <td><i class="fa-solid fa-angle-right"></i></td>
-                      </tr>
-                      <tr>
-                          <td>Deepinder Goyal Pankaj </td>
-                          <td><i class="fa-solid fa-angle-right"></i></td>
-                      </tr>
-                      <tr>
-                          <td>Deepinder Goyal Pankaj </td>
-                          <td><i class="fa-solid fa-angle-right"></i></td>
-                      </tr>
-                      <tr>
-                          <td>Deepinder Goyal Pankaj </td>
-                          <td><i class="fa-solid fa-angle-right"></i></td>
-                      </tr>
-                      <tr>
-                          <td>Deepinder Goyal Pankaj</td>
-                          <td><i class="fa-solid fa-angle-right"></i></td>
-                      </tr>
-                      <tr>
-                          <td>Deepinder Goyal Pankaj</td>
-                          <td><i class="fa-solid fa-angle-right"></i></td>
-                      </tr>
-                      <tr>
-                          <td>Deepinder Goyal Pankaj</td>
-                          <td><i class="fa-solid fa-angle-right"></i></td>
-                      </tr>
-                      <tr>
-                          <td>Deepinder Goyal Pankaj</td>
-                          <td><i class="fa-solid fa-angle-right"></i></td>
-                      </tr>
-
-                  </tbody>
-              </table>
-
-          </div>
-      </div>
-  </div> -->
+    
   <div class="modal fade" id="exampleModalToggle2" aria-hidden="true" aria-labelledby="exampleModalToggleLabel2"
       tabindex="-1">
       <div class="modal-dialog modal-dialog-centered">
@@ -1299,6 +1254,8 @@ function onButtonClick() {
     $(".js-expander-more").attr("hidden", true);
   }
 }</script>
+
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
 </body>
 

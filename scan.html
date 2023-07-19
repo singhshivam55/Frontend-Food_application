@@ -18,6 +18,7 @@
         .web-icon {
             text-align: end;
             padding-bottom: 5px;
+            display: none;
         }
 
         /* main media query start */
@@ -42,12 +43,15 @@
             font-family: "Poppins", sans-serif;
             margin: 0 0 35px;
         }
-
+        .custom-tab:hover{
+            background-color: #8e2619;
+        }
+    
         .sec-pad {
             padding: 60px 0 0;
             margin: 50px 0;
         }
-
+     
         .contact-sec {
             align-item: center;
             display: flex;
@@ -247,7 +251,7 @@
             text-decoration: none;
             font-weight: bold;
         }
-
+    
         .profile-card-1 .mid-section .line {
             background: #7ee2a8;
             width: 80%;
@@ -449,7 +453,7 @@
 
         .copy-write-text {
             text-align: center;
-            font-size: 16px;
+            font-size: 13px;
         }
 
         /* 
@@ -550,17 +554,17 @@ a:hover {
     z-index: 9;
 }
 .teamcol {
-    padding: 15px;
+    padding: 3px;
     background: #fff;
     border-radius: 10px;
     position: relative;
     transition: transform 1s ease-in-out;
 }
-.teamcol:hover {
+/* .teamcol:hover {
     transform: translateY(-30px);
     box-shadow: 0px 3px 10px 3px rgb(170 170 173 / 0.5);
     transition: transform 1s ease-in-out;
-}
+} */
 .teamcol:before {
     content: "";
     width: 50%;
@@ -583,10 +587,10 @@ a:hover {
     border-bottom-left-radius: 10px;
     transition: width 1s ease-in-out;
 }
-.teamcol:hover::before, .teamcol:hover::after {
+/* .teamcol:hover::before, .teamcol:hover::after {
     width: 100%;
     transition: width 1s ease-in-out;
-}
+} */
 .member-name {
     margin-top: 18px;
 }
@@ -642,9 +646,9 @@ font-family: fangsong;">Lorem ipsum dolor sit, amet consectetur adipisicing elit
                 <button type="button" class="btn btn-primary btn-lg  custom-tab">Tab to Start</button>
                 <div class="form-group" style="font-size: 14px; text-align: center; padding-top: 1.5rem;"><input
                         type="checkbox" id="terms" required="" style="height: 13px !important; "> <span>I agree to the
-                        <a href="https://qr4order.com/mobile_terms_conditions/"
+                        <a href="#"
                             style="color: #8e2619; text-decoration: underline;">Terms and Conditions</a> and <a
-                            href="https://qr4order.com/mobile_privacy_policy/"
+                            href="#"
                             style="color: #8e2619; text-decoration: underline;">Privacy Policy.</a></span></div>
             </div>
             <br>
@@ -731,7 +735,7 @@ font-family: fangsong;">Lorem ipsum dolor sit, amet consectetur adipisicing elit
 
         <!-- row end -->
         <div class="copy-write">
-            <hr>
+            <!-- <hr> -->
             <p class="copy-write-text">Copyright © All rights reserved.</p>
             <div class="socialmedia">
                 <!-- <i class="fa-brands fa-instagram custom-socail"></i>

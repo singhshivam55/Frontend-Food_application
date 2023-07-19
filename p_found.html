@@ -383,6 +383,9 @@ left: 65px  !important;
         position: relative;
         /* left: -6rem !important; */
       }
+      .update-value{
+        grid-template-columns: 10% !important;
+      }
 
     }
 
@@ -1225,18 +1228,17 @@ a:link, a:visited{
   text-decoration: none;
   color: #000000;
 }
-h3 a:hover{
-  text-decoration: none;
-  background: #000000;
-  color: #3498DB;
-  cursor: pointer;
-}.title_404{
+.title_404{
     font-size: 18px;
 }
 .paira_404{
     font-size: 16px;
     position: relative;
     top: -30px;
+}
+.title_404{
+  text-align: center;
+    line-height: 21px;
 }
   </style>
 </head>
@@ -1267,8 +1269,8 @@ h3 a:hover{
 
     <div class="container" style="display: flex;
     flex-direction: column;
-    justify-content: center;">
-     <img src="./image/404-bug.jpg" width="200px" alt="">
+    justify-content: center; align-items: center;">
+     <img src="./image/404-bug.jpg" width="300px" alt="">
         <h2 class="title_404">A <span></span> error occured, Page not found, check the URL and try again.</h2><br><br>
           <h3 class="paira_404"><a href="#">Return to home</a>&nbsp;|&nbsp;<a href="javascript:history.back()">Go Back</a></h3>
         </div>
